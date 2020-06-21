@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chessboard with Bootstrap</title>
+
+        <link rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+        crossorigin="anonymous">
+
+        <style>
+            .container {
+                height: 1200px;
+            }
+
+            .col-2 {
+                height: 200px;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            function hideOrShowChessboard() {
+                var chessboard = document.getElementById("chessboard");
+                var chessButton = document.getElementById("chessButton");
+
+                if(chessboard.style.display == "none") {
+                    chessboard.style.display = "block";
+                    chessButton.value = "Hide Board";
+                }
+                else {
+                    chessboard.style.display = "none";
+                    chessButton.value = "Show Board";
+                }
+            }
+
+            function hideOrShowDanger() {
+                var dangers = document.getElementsByClassName("bg-danger");
+                //When you get multiple elements by class, it is stored as an array
+                var newDisplay = "";
+
+                var dangerButton = document.getElementById("dangerButton");
+
+                //optimized so you only do 1 if statement test and then apply to rest of elements
+                if(dangers[0].style.display == "none") {
+                    newDisplay = "block";
+                    dangerButton.value = "Hide Danger Squares";
+                }
+                else {
+                    newDisplay = "none";
+                    dangerButton.value = "Show Danger Squares";
+                }
+
+                for (var i = 0; i < dangers.length; i++) {
+                    dangers[i].style.display = newDisplay;
+                }
+
+                //if statement was applied to every element in for loop which is not needed
+               /* for(var i = 0; i < dangerSquares.length; i++) {
+                    if(dangerSquares[i].style.display == "none") {
+                        dangerSquares[i].style.display = "block";
+                        dangerButton.value = "Hide Danger Squares";
+                    }
+                    else {
+                        dangerSquares[i].style.display = "none";
+                        dangerButton.value = "Show Danger Squares";
+                    }
+                }*/
+            }
+
+            function hideOrShowWarning() {
+                var warnings = document.getElementsByClassName("bg-warning");
+                var warningButton = document.getElementById("warningButton");
+                var newDisplay2 = "";
+
+                if(warnings[0].style.display == "none") {
+                    newDisplay2 = "block";
+                    warningButton.value = "Hide Warning Squares";
+                }
+                else {
+                    newDisplay2 = "none";
+                    warningButton.value = "Show Warning Squares";
+                }
+
+                for(var i = 0; i < warnings.length; i++) {
+                    warnings[i].style.display = newDisplay2;
+                }
+            }
+
+            
+
+        </script>
+    </head>
+
+    <body>
+        <input type="button" id="chessButton" value="Hide Board" onClick="hideOrShowChessboard()">
+        <input type="button" id="warningButton" value="Hide Warning Squares" onClick="hideOrShowWarning()">
+        <input type="button" id="dangerButton" value="Hide Danger Squares" onClick="hideOrShowDanger()">
+
+        <div id="chessboard" class="container bg-dark">
+        <div class="row">
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+        
+        </div>  
+        <div class="row">
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+            <div class="col-2 bg-danger"></div>
+            <div class="col-2 bg-warning"></div>
+        </div>
+        </div>
+    </body>
+</html>
